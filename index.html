@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduNova Classroom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <div class="logo">EduNova Classroom</div>
+      <ul class="nav-links">
+        <li><a href="#ai-buddy">AI Buddy</a></li>
+        <li><a href="#missions">Missions</a></li>
+        <li><a href="#schedule">ตารางเรียน</a></li>
+        <li><a href="#community">คอมมูนิตี้</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>คลาสรูมยุคใหม่ที่ทำให้การเรียนสนุกและชาญฉลาดขึ้น</h1>
+      <p>รวมเอาเอไอเพื่อการเรียนรู้ เกมมิฟิเคชัน และคอมมูนิตี้ในที่เดียว เพื่อผลักดันศักยภาพของผู้เรียนในทุกห้องเรียน</p>
+      <a class="cta" href="#ai-buddy">เริ่มสำรวจฟีเจอร์เอไอ</a>
+    </div>
+    <div class="hero-visual" role="img" aria-label="ภาพประกอบนักเรียนและเอไอ">🤖📚✨</div>
+  </header>
+
+  <main>
+    <section class="features" id="features">
+      <article>
+        <h2>ห้องเรียนแบบไฮบริด</h2>
+        <p>จัดการบทเรียนทั้งแบบสดและแบบออนดีมานด์ พร้อมระบบติดตามความก้าวหน้าแบบเรียลไทม์</p>
+      </article>
+      <article>
+        <h2>เกมมิฟิเคชัน</h2>
+        <p>ปลดล็อกภารกิจและสะสมพอยต์เพื่อรับของรางวัล เพิ่มแรงจูงใจให้ผู้เรียนสนุกกับการเรียนมากขึ้น</p>
+      </article>
+      <article>
+        <h2>แผงควบคุมครู</h2>
+        <p>ออกแบบบทเรียน วัดผล และรับคำแนะนำจากเอไอเพื่อปรับแผนการสอนให้เหมาะสมกับแต่ละคน</p>
+      </article>
+    </section>
+
+    <section class="ai-buddy" id="ai-buddy">
+      <div class="section-header">
+        <h2>AI Study Buddy</h2>
+        <p>ให้เอไอช่วยออกแบบกิจกรรมการเรียนเฉพาะบุคคลแบบสนุก ๆ เพียงเลือกหัวข้อและโทนที่ต้องการ</p>
+      </div>
+      <form class="buddy-form">
+        <label for="topic">หัวข้อที่สนใจ</label>
+        <input type="text" id="topic" name="topic" placeholder="เช่น แรงโน้มถ่วง หรือ งานศิลปะยุคเรอเนสซองส์" required />
+
+        <label for="tone">โทนกิจกรรม</label>
+        <select id="tone" name="tone">
+          <option value="ผจญภัย">ผจญภัย</option>
+          <option value="วิทย์สุดล้ำ">วิทย์สุดล้ำ</option>
+          <option value="ดนตรีและศิลป์">ดนตรีและศิลป์</option>
+          <option value="ปริศนา">ปริศนา</option>
+        </select>
+
+        <label for="duration">ระยะเวลา (นาที)</label>
+        <input type="number" id="duration" name="duration" min="10" max="180" step="5" value="45" />
+
+        <button type="submit">สร้างกิจกรรม</button>
+      </form>
+      <div class="buddy-output" aria-live="polite"></div>
+    </section>
+
+    <section class="missions" id="missions">
+      <div class="section-header">
+        <h2>AI Quest Lab</h2>
+        <p>ภารกิจรายสัปดาห์ที่สร้างโดยเอไอ ช่วยให้ผู้เรียนได้ทดลอง ท้าทาย และสะสมพอยต์</p>
+      </div>
+      <div class="mission-cards">
+        <article class="mission-card">
+          <h3>Mission Sparks</h3>
+          <p>เอไอช่วยสร้างจุดประกายด้วยคำถามปลายเปิด 3 ข้อเพื่อเปิดการเรียนรู้ในคาบแรกของสัปดาห์</p>
+          <button data-mission="sparks">สร้างคำถาม</button>
+          <ul class="mission-output" id="mission-sparks"></ul>
+        </article>
+        <article class="mission-card">
+          <h3>Lightning Review</h3>
+          <p>สรุปบทเรียนแบบแฟลชการ์ด 5 ใบ พร้อมทิปส์สำหรับการจำให้นานขึ้น</p>
+          <button data-mission="review">สร้างแฟลชการ์ด</button>
+          <ul class="mission-output" id="mission-review"></ul>
+        </article>
+        <article class="mission-card">
+          <h3>Creative Remix</h3>
+          <p>ชวนผู้เรียนออกแบบผลงานจากบทเรียนที่เรียนไป ด้วยข้อเสนอที่แปลกใหม่และท้าทาย</p>
+          <button data-mission="remix">สร้างไอเดีย</button>
+          <ul class="mission-output" id="mission-remix"></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="schedule" id="schedule">
+      <div class="section-header">
+        <h2>ตารางเรียนอัจฉริยะ</h2>
+        <p>เอไอปรับแผนเวลาอัตโนมัติตามพลังงานของผู้เรียนและเป้าหมายรายสัปดาห์</p>
+      </div>
+      <div class="schedule-grid">
+        <div class="schedule-inputs">
+          <label for="energy">พลังงานวันนี้</label>
+          <input type="range" id="energy" min="1" max="5" value="3" />
+          <div class="energy-scale">
+            <span>ชิล</span>
+            <span>กำลังดี</span>
+            <span>พลังเต็ม</span>
+          </div>
+
+          <label for="goal">เป้าหมายหลัก</label>
+          <select id="goal">
+            <option value="revision">ทบทวน</option>
+            <option value="project">โปรเจกต์</option>
+            <option value="explore">สำรวจความรู้ใหม่</option>
+          </select>
+
+          <button id="generate-schedule">สร้างตาราง</button>
+        </div>
+        <ul class="schedule-output" aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <section class="community" id="community">
+      <div class="section-header">
+        <h2>Community Lounge</h2>
+        <p>แลกเปลี่ยนไอเดียกับเพื่อน ครู และเมนเทอร์ พร้อมรับคำแนะนำจากเอไอเพื่อสร้างบทสนทนาอย่างสร้างสรรค์</p>
+      </div>
+      <div class="community-feed">
+        <article>
+          <h3>หัวข้อกำลังมาแรง</h3>
+          <ul>
+            <li>#STEMPlayground</li>
+            <li>#ศิลปะเล่าเรื่อง</li>
+            <li>#ดีเบตสร้างสรรค์</li>
+          </ul>
+        </article>
+        <article>
+          <h3>AI Moderator Tips</h3>
+          <p>“ลองเปิดคำถามด้วยประสบการณ์จริง แล้วชวนเพื่อนต่อยอดด้วยข้อมูลที่ค้นคว้าเพิ่มเติม”</p>
+        </article>
+        <article>
+          <h3>กิจกรรมคอมมูนิตี้สัปดาห์นี้</h3>
+          <p>เวิร์กช็อปการเล่าเรื่องด้วยข้อมูล + ห้องแล็บออนไลน์สำหรับทดลองโครงงานวิทยาศาสตร์สด</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 EduNova Classroom | รวมพลังการเรียนรู้ด้วยเอไอ</p>
+    <div class="footer-links">
+      <a href="#">นโยบายความเป็นส่วนตัว</a>
+      <a href="#">ศูนย์ช่วยเหลือ</a>
+      <a href="#">ติดต่อทีมงาน</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
